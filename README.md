@@ -9,6 +9,7 @@
 + 使用者可以修改餐廳資料
 + 使用者可以刪除不喜歡的餐廳資料
 + 使用者可以使用關鍵字，搜尋餐廳名稱、類別
++ 使用者可以透過下拉式選單，依照不同選擇排序
 
 ### Environment
 + Node.js
@@ -36,7 +37,7 @@ npm run dev
 ```
 ## Example
 ### 首頁
-![homePage](public/image/index_page.png)
+![homePage](public/image/home_page.png)
 ### 創建頁面
 ![newPage](public/image/new_page.png)
 ### 詳細資料頁面
