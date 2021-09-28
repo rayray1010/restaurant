@@ -12,9 +12,20 @@
           </div>
         </div>
       </form>
-      <a href="/restaurant/new" class="btn btn-primary mt-3 " role="button">新增餐廳</a>
+      <div class="d-flex justify-content-md-between align-items-center">
+        <a href="/restaurant/new" class="btn btn-primary mt-3 " role="button">新增餐廳</a>
+        <form action="/?_method=PUT" method="POST" id="sortOption">
+          <select name="sort" onchange="sortOption.submit()">
+            <option value="asc" {{isMatched sortBy "asc" }}>升冪</option>
+            <option value="desc" {{isMatched sortBy "desc" }}>降冪</option>
+            <option value="category" {{isMatched sortBy "category" }}>種類</option>
+            <option value="location" {{isMatched sortBy "location" }}>地點</option>
+          </select>
+        </form>
+      </div>
     </div>
   </div>
+
 </div>
 
 <!-- restaurant list -->
