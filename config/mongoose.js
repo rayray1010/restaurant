@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/a5')
+mongoose.connect('mongodb://localhost/restaurant')
 const db = mongoose.connection
 db.on('error', () => {
   console.log('db error')

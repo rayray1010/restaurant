@@ -14,13 +14,30 @@
       </form>
       <div class="d-flex justify-content-md-between align-items-center">
         <a href="/restaurant/new" class="btn btn-primary mt-3 " role="button">新增餐廳</a>
-        <form action="/?_method=PUT" method="POST" id="sortOption">
+        <form action="/" id="sortOption" method="GET">
           <select name="sort" onchange="sortOption.submit()">
-            <option value="asc" {{isMatched sortBy "asc" }}>升冪</option>
-            <option value="desc" {{isMatched sortBy "desc" }}>降冪</option>
-            <option value="category" {{isMatched sortBy "category" }}>種類</option>
-            <option value="location" {{isMatched sortBy "location" }}>地點</option>
+            <option value="asc" {{{isMatched sort "asc" }}}>升冪</option>
+            <option value="desc" {{{isMatched sort "desc" }}}>降冪</option>
+            <option value="category" {{{isMatched sort "category" }}}>種類</option>
+            <option value="location" {{{isMatched sort "location" }}}>地點</option>
           </select>
+          <select name="category" onchange="sortOption.submit()">
+            <option value="." {{{isMatched category "類別" }}}>類別</option>
+            <option {{{isMatched category "中東料理" }}}>中東料理</option>
+            <option {{{isMatched category "日本料理" }}}>日本料理</option>
+            <option {{{isMatched category "義式餐廳" }}}>義式餐廳</option>
+            <option {{{isMatched category "美式" }}}>美式</option>
+            <option {{{isMatched category "酒吧" }}}>酒吧</option>
+            <option {{{isMatched category "咖啡" }}}>咖啡</option>
+          </select>
+          <select name="rating" onchange="sortOption.submit()">
+            <option value="0" {{{isMatched rating "0" }}}>評分</option>
+            <option value="4" {{{isMatched rating "4" }}}>4+</option>
+            <option value="3" {{{isMatched rating "3" }}}>3+</option>
+            <option value="2.5" {{{isMatched rating "2.5" }}}>2.5+</option>
+            <option value="2" {{{isMatched rating "2" }}}>2+</option>
+          </select>
+
         </form>
       </div>
     </div>
