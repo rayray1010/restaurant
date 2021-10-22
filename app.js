@@ -4,7 +4,9 @@ const ephbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const routes = require('./routes')
 const session = require('express-session')
+const userPassport = require('./config/passport')
 require('./config/mongoose')
+
 //設定 express 裡的引擎、畫面、解析
 app.engine(
   'hbs',
@@ -29,6 +31,7 @@ app.use(
     saveUninitialized: true,
   })
 )
+userPassport(app)
 app.use(routes)
 
 //監聽 web server
