@@ -3,6 +3,7 @@ const app = express()
 const ephbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const routes = require('./routes')
+const session = require('express-session')
 require('./config/mongoose')
 //設定 express 裡的引擎、畫面、解析
 app.engine(
@@ -21,6 +22,13 @@ app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
+app.use(
+  session({
+    secret: 'ThisIsMySecret',
+    resave: false,
+    saveUninitialized: true,
+  })
+)
 app.use(routes)
 
 //監聽 web server
