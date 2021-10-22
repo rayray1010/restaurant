@@ -32,6 +32,11 @@ app.use(
   })
 )
 userPassport(app)
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  next()
+})
 app.use(routes)
 
 //監聽 web server
