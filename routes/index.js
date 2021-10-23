@@ -5,7 +5,7 @@ const users = require('./modules/users')
 const restaurant = require('./modules/restaurant')
 const { authenticator } = require('../middleware/auth')
 
-router.use('/users', users)
 router.use('/restaurant', authenticator, restaurant)
+router.use('/users', users)
 router.use('/', authenticator, home)
 module.exports = router
