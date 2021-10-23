@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 const express = require('express')
 const app = express()
 const ephbs = require('express-handlebars')
@@ -27,7 +30,7 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(
   session({
-    secret: 'ThisIsMySecret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   })
@@ -44,6 +47,6 @@ app.use((req, res, next) => {
 app.use(routes)
 
 //監聽 web server
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('web server is activated')
 })

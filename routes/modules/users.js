@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const User = require('../../models/user')
 const passport = require('passport')
-const { authenticate } = require('passport')
 const bcrypt = require('bcryptjs')
 
 router.get('/login', (req, res) => {
@@ -23,7 +22,7 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
   const errors = []
-  if (!name || !email || !password || !confirmPassword) {
+  if (!email || !password || !confirmPassword) {
     errors.push({ message: '所有欄位都是必填。' })
   }
   if (password !== confirmPassword) {
