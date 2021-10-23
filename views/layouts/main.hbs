@@ -22,7 +22,11 @@
             width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
           {{#if isAuthenticated}}{{ user.name }}{{/if}}餐廳清單
         </a>
-        <a href="/users/login" class="btn btn-primary">登錄</a>
+        {{#if isAuthenticated}}
+        <a href="/users/logout" class="btn btn-primary">登出</a>
+        {{else}}
+        <a href="/users/login" class="btn btn-primary">登入</a>
+        {{/if}}
       </div>
     </nav>
 
