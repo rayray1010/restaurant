@@ -10,13 +10,22 @@
 + 使用者可以刪除不喜歡的餐廳資料
 + 使用者可以使用關鍵字，搜尋餐廳名稱、類別
 + 使用者可以透過下拉式選單，依照不同選擇排序
++ 使用者可以創建帳號
++ 使用者可以使用 Facebook 帳號登錄
++ 使用者密碼已雜湊
 
 ### Environment
 + Node.js
 + npm
++ Express
 + MongoDB
 + mongoose
++ session
++ passport
++ bcryptjs
++ connect-flash
 + nodemon
+
   
 ### Installation
 1. 複製專案 URL 並貼到 terminal 
@@ -42,3 +51,5 @@ npm run dev
 ![newPage](public/image/new_page.png)
 ### 詳細資料頁面
 ![detailPage](public/image/detail_page.png)
+### 登錄頁面
+![loginPage](public/image/loginPage.png)
